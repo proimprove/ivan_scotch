@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иван Скотч — Тренер и методолог ведущих</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0e12;
+            color: #f3f4f6;
+        }
+        .taplink-card {
+            background: #16181e;
+            border: 1px solid #272a34;
+            border-radius: 20px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #000;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: #232733;
+            border: 1px solid #374151;
+            color: #f3f4f6;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background: #2d3242;
+        }
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex justify-center py-0 sm:py-6 px-0 sm:px-4">
+
+    <!-- Mobile Wrapper Container -->
+    <div class="w-full max-w-md bg-[#0d0e12] min-h-screen sm:min-h-[840px] sm:rounded-3xl border-0 sm:border border-zinc-800 shadow-2xl overflow-hidden flex flex-col relative">
+
+        <!-- Header Bar / Nav Indicator -->
+        <header class="sticky top-0 z-50 bg-[#0d0e12]/90 backdrop-blur-md border-b border-zinc-800 px-4 py-3 flex items-center justify-between">
+            <span class="text-xs font-semibold tracking-wider text-amber-500 uppercase">ИВАН СКОТЧ</span>
+            <div class="flex space-x-1 text-xs">
+                <button onclick="navigateTo('main')" id="nav-main" class="px-2.5 py-1 rounded-full text-zinc-400 hover:text-white bg-zinc-900 transition">Главная</button>
+                <button onclick="navigateTo('praktika')" id="nav-praktika" class="px-2.5 py-1 rounded-full text-zinc-400 hover:text-white transition">Практика</button>
+                <button onclick="navigateTo('arch')" id="nav-arch" class="px-2.5 py-1 rounded-full text-zinc-400 hover:text-white transition">Архитектура</button>
+            </div>
+        </header>
+
+        <!-- MAIN PAGE -->
+        <main id="page-main" class="page-content active p-5 space-y-6 flex-1 overflow-y-auto">
+            
+            <!-- Bio Profile with Main Portrait Photo -->
+            <div class="text-center space-y-3 pt-2">
+                <div class="relative w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-tr from-amber-500 via-amber-300 to-amber-600 shadow-xl shadow-amber-500/10">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+                         alt="Иван Скотч" 
+                         class="w-full h-full object-cover rounded-full filter brightness-105 contrast-105 border-2 border-[#0d0e12]"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e293b/f59e0b?text=ФОТО+1';">
+                    <span class="absolute bottom-0 right-0 bg-amber-500 text-black text-[9px] font-black px-1.5 py-0.5 rounded-full border border-black uppercase tracking-wider">Портрет</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black text-white tracking-tight">ИВАН СКОТЧ</h1>
+                    <p class="text-xs font-semibold text-amber-500 tracking-wider uppercase mt-1">Тренер и методолог ведущих</p>
+                </div>
+                <p class="text-sm text-zinc-300 leading-relaxed px-2">
+                    Учу ведущих работать не только с тем, что написано в сценарии, но и с тем, что происходит прямо сейчас.
+                    <br><br>
+                    А ещё — разбирать собственный опыт и собирать из него обучение.
+                </p>
+            </div>
+
+            <!-- Direction Banner -->
+            <div class="taplink-card p-4 text-center border-l-4 border-l-amber-500">
+                <h2 class="text-xs font-bold text-amber-400 tracking-wider uppercase">СЕЙЧАС У МЕНЯ ДВА НАПРАВЛЕНИЯ</h2>
+                <p class="text-xs text-zinc-400 mt-1">Выбирай то, что ближе к твоей задаче.</p>
+            </div>
+
+            <!-- Card 1: Praktika with Photo Banner -->
+            <div class="taplink-card overflow-hidden hover:border-zinc-700 transition group">
+                <div class="relative h-36 w-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" 
+                         alt="Практика Ведения" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-90"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e293b/f59e0b?text=ФОТО+2:+На+сцене';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#16181e] via-[#16181e]/40 to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-amber-500 text-black px-2.5 py-1 rounded-full shadow-lg">
+                        Фото 2: В действии
+                    </span>
+                </div>
+                <div class="p-5 space-y-4 -mt-4 relative z-10">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-full border border-amber-500/20">Набор в августе</span>
+                        <span class="text-xs text-zinc-400">4 встречи</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">ПРАКТИКА ВЕДЕНИЯ</h3>
+                        <p class="text-xs text-amber-400 font-medium">Импровизация с гостями</p>
+                    </div>
+                    <p class="text-xs font-semibold text-zinc-300 uppercase tracking-wide">ХОЧУ СИЛЬНЕЕ ВЕСТИ</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Ты умеешь провести мероприятие. Но гость может неожиданно ответить, замолчать или увести разговор совсем не туда...
+                    </p>
+                    <button onclick="navigateTo('praktika')" class="w-full py-3 px-4 rounded-xl btn-primary text-xs tracking-wider uppercase shadow-lg shadow-amber-500/10">
+                        ПРОГРАММА И ЗАЯВКА →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Architecture with Photo Banner -->
+            <div class="taplink-card overflow-hidden hover:border-zinc-700 transition group">
+                <div class="relative h-36 w-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" 
+                         alt="Архитектура Тренинга" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500 filter brightness-90"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e293b/3b82f6?text=ФОТО+3:+Разбор/Обучение';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#16181e] via-[#16181e]/40 to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-blue-500 text-white px-2.5 py-1 rounded-full shadow-lg">
+                        Фото 3: Обучение
+                    </span>
+                </div>
+                <div class="p-5 space-y-4 -mt-4 relative z-10">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Старт в сентябре</span>
+                        <span class="text-xs text-zinc-400">Предзапись</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">АРХИТЕКТУРА ТРЕНИНГА</h3>
+                    </div>
+                    <p class="text-xs font-semibold text-zinc-300 uppercase tracking-wide">ХОЧУ СОЗДАТЬ СВОЁ ОБУЧЕНИЕ</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Можно много лет хорошо вести и всё равно не уметь объяснить, за счёт чего у тебя получается...
+                    </p>
+                    <button onclick="navigateTo('arch')" class="w-full py-3 px-4 rounded-xl btn-secondary text-xs font-bold tracking-wider uppercase">
+                        УЗНАТЬ ОБ АРХИТЕКТУРЕ →
+                    </button>
+                </div>
+            </div>
+
+            <!-- About Section with Photo -->
+            <div class="taplink-card p-5 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 border border-zinc-700">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                             alt="Закулисье" 
+                             class="w-full h-full object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/150x150/1e293b/ffffff?text=ФОТО+4';">
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">КТО Я</h3>
+                        <p class="text-[11px] text-zinc-400">10+ лет в индустрии событий</p>
+                    </div>
+                </div>
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                    Больше десяти лет я работал ведущим мероприятий. Потом решил разобраться, почему один разговор с гостем оживает, а другой разваливается.
+                </p>
+                <ul class="text-xs text-zinc-400 space-y-2 pt-1 border-t border-zinc-800">
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">—</span> тренер и методолог;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">—</span> основатель Академии импровизации PROiMPROVE;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">—</span> коуч ICF;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">—</span> президент Ассоциации тренеров по коммуникативной импровизации «НАЧАЛО».</li>
+                </ul>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="p-5 text-center space-y-3 rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800">
+                <h3 class="text-sm font-bold text-white uppercase tracking-wide">НЕ ПОНИМАЕШЬ, ЧТО ТЕБЕ ПОДХОДИТ?</h3>
+                <p class="text-xs text-zinc-400">Напиши мне и коротко расскажи, с чем хочешь разобраться. Подскажу, какая программа ближе к твоей задаче.</p>
+                <a href="https://t.me/" target="_blank" class="block w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs uppercase tracking-wider transition">
+                    💬 НАПИСАТЬ В TELEGRAM
+                </a>
+            </div>
+
+        </main>
+
+        <!-- PAGE 1: PRACTIKA -->
+        <main id="page-praktika" class="page-content p-5 space-y-6 flex-1 overflow-y-auto">
+            
+            <button onclick="navigateTo('main')" class="text-xs text-zinc-400 hover:text-white flex items-center space-x-1 mb-2">
+                <span>← На главную</span>
+            </button>
+
+            <!-- Title -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-full border border-amber-500/20">Набор в августе</span>
+                <h1 class="text-2xl font-black text-white">ПРАКТИКА ВЕДЕНИЯ</h1>
+                <p class="text-xs font-semibold text-amber-400 uppercase tracking-wider">Импровизация с гостями</p>
+                <p class="text-xs text-zinc-300 leading-relaxed pt-2 border-t border-zinc-800">
+                    Четыре онлайн-встречи, на которых мы учимся превращать обычный ответ гостя в живой диалог, шутку и игру.
+                </p>
+            </div>
+
+            <!-- Dates Card -->
+            <div class="taplink-card p-4 space-y-2 bg-amber-500/5 border-amber-500/20">
+                <div class="flex items-center justify-between text-xs text-zinc-300">
+                    <span class="text-zinc-400">📅 Даты:</span>
+                    <span class="font-semibold text-amber-400">4, 11, 18 и 25 августа</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-zinc-300">
+                    <span class="text-zinc-400">⏰ Время:</span>
+                    <span class="font-semibold text-amber-400">10:00–13:00 по МСК</span>
+                </div>
+            </div>
+
+            <!-- Problem -->
+            <div class="taplink-card p-5 space-y-3">
+                <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider">ЗНАКОМО?</h3>
+                <p class="text-xs text-zinc-300 leading-relaxed">
+                    Иногда импровизация льётся сама. Все реплики приходят вовремя, гости включаются, шутки попадают.
+                </p>
+                <p class="text-xs text-zinc-400">А иногда — не идёт и всё. Особенно когда гость:</p>
+                <ul class="text-xs text-zinc-300 space-y-1 pl-2 border-l-2 border-zinc-700">
+                    <li>• отвечает односложно;</li>
+                    <li>• говорит что-то неожиданное;</li>
+                    <li>• долго думает;</li>
+                    <li>• не даёт привычной реакции.</li>
+                </ul>
+                <p class="text-xs text-zinc-300 leading-relaxed pt-1">
+                    В этот момент ведущий часто начинает говорить за гостя, отшучивается или возвращается к сценарию. На тренинге мы разбираемся, что делать вместо этого.
+                </p>
+            </div>
+
+            <!-- Pipeline -->
+            <div class="taplink-card p-5 space-y-3">
+                <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider">ЧЕМ БУДЕМ ЗАНИМАТЬСЯ</h3>
+                <p class="text-xs text-zinc-400">Весь тренинг построен вокруг одной последовательности:</p>
+                
+                <div class="space-y-1.5 text-xs font-medium text-zinc-200 py-2">
+                    <div class="p-2 rounded bg-zinc-900 border border-zinc-800 text-center">1. Услышать ответ</div>
+                    <div class="text-center text-amber-500 text-xs">↓</div>
+                    <div class="p-2 rounded bg-zinc-900 border border-zinc-800 text-center">2. Зацепиться & Собрать контекст</div>
+                    <div class="text-center text-amber-500 text-xs">↓</div>
+                    <div class="p-2 rounded bg-zinc-900 border border-zinc-800 text-center">3. Заметить странность & Проверить её</div>
+                    <div class="text-center text-amber-500 text-xs">↓</div>
+                    <div class="p-2 rounded bg-zinc-900 border border-zinc-800 text-center">4. Создать игру → Вовлечь гостя и зал</div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="taplink-card p-5 space-y-3">
+                <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider">ЧТО ПОЛУЧИТСЯ В ИТОГЕ</h3>
+                <ul class="text-xs text-zinc-300 space-y-2">
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">✓</span> услышать зацепку в ответе гостя;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">✓</span> развить её вопросами;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">✓</span> заметить необычную логику;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">✓</span> предложить игру и проверить, принимает ли её гость;</li>
+                    <li class="flex items-start"><span class="text-amber-500 mr-2">✓</span> подключить других людей или продолжить отыгрыш самому.</li>
+                </ul>
+            </div>
+
+            <!-- Form -->
+            <div class="taplink-card p-5 space-y-4 border-amber-500/30">
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider text-center">ОСТАВИТЬ ЗАЯВКУ</h3>
+                <form onsubmit="handleFormSubmit(event, 'Практика Ведения')" class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Ваше имя *</label>
+                        <input type="text" required placeholder="Иван" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Telegram (@username) *</label>
+                        <input type="text" required placeholder="@username" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Сколько мероприятий ты провёл?</label>
+                        <input type="text" placeholder="Например: около 50" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Что сейчас сложнее всего в общении с гостями?</label>
+                        <textarea rows="3" placeholder="Расскажи коротко..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 px-4 rounded-xl btn-primary text-xs uppercase tracking-wider shadow-lg shadow-amber-500/10">
+                        ОСТАВИТЬ ЗАЯВКУ
+                    </button>
+                </form>
+            </div>
+
+        </main>
+
+        <!-- PAGE 2: ARCHITECTURE -->
+        <main id="page-arch" class="page-content p-5 space-y-6 flex-1 overflow-y-auto">
+            
+            <button onclick="navigateTo('main')" class="text-xs text-zinc-400 hover:text-white flex items-center space-x-1 mb-2">
+                <span>← На главную</span>
+            </button>
+
+            <!-- Title -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Старт в сентябре</span>
+                <h1 class="text-2xl font-black text-white">АРХИТЕКТУРА ТРЕНИНГА</h1>
+                <p class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Разбери свой опыт в метод</p>
+            </div>
+
+            <!-- Quote Block -->
+            <div class="taplink-card p-5 border-l-4 border-l-blue-500 space-y-2">
+                <p class="text-sm font-bold text-white tracking-tight">Я УМЕЮ ДЕЛАТЬ.<br>НО НЕ УМЕЮ ЭТОМУ УЧИТЬ.</p>
+                <p class="text-xs text-zinc-300 leading-relaxed pt-2">
+                    Многие сильные ведущие хорошо чувствуют зал, быстро реагируют и принимают точные решения прямо во время мероприятия.
+                    <br><br>
+                    Проблема начинается, когда нужно объяснить другому человеку, как это повторить.
+                </p>
+            </div>
+
+            <!-- Result list -->
+            <div class="taplink-card p-5 space-y-3">
+                <h3 class="text-xs font-bold text-blue-400 uppercase tracking-wider">В РЕЗУЛЬТАТЕ ТЫ СМОЖЕШЬ</h3>
+                <ul class="text-xs text-zinc-300 space-y-2">
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> сформулировать, чему хочешь учить;</li>
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> разложить свой опыт на понятные действия;</li>
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> собрать логику обучения;</li>
+                    <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span> подготовить каркас тренинга или продукта.</li>
+                </ul>
+            </div>
+
+            <!-- Waitlist Form -->
+            <div class="taplink-card p-5 space-y-4 border-blue-500/30">
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider text-center">ВСТАТЬ В ЛИСТ ОЖИДАНИЯ</h3>
+                <p class="text-xs text-zinc-400 text-center">Заполни форму, чтобы первым получить спец-условия при старте продаж в сентябре.</p>
+                <form onsubmit="handleFormSubmit(event, 'Архитектура Тренинга')" class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Ваше имя *</label>
+                        <input type="text" required placeholder="Иван" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Telegram (@username) *</label>
+                        <input type="text" required placeholder="@username" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] text-zinc-400 mb-1">Чему ты хочешь учить?</label>
+                        <textarea rows="3" placeholder="Опиши свою тему или идею..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-blue-500/10">
+                        ВСТАТЬ В ЛИСТ ОЖИДАНИЯ
+                    </button>
+                </form>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-3 px-4 border-t border-zinc-800 text-center text-[10px] text-zinc-600">
+            © Иван Скотч • Taplink Разработка
+        </footer>
+
+    </div>
+
+    <!-- Alert Modal Simulation -->
+    <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
+        <div class="taplink-card p-6 max-w-xs w-full text-center space-y-3 border-amber-500/50">
+            <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-full flex items-center justify-center mx-auto text-xl">✓</div>
+            <h4 class="text-sm font-bold text-white">Заявка принята!</h4>
+            <p id="modal-text" class="text-xs text-zinc-300">Заявка пришла. Скоро свяжемся с тобой и расскажем об участии.</p>
+            <button onclick="closeModal()" class="w-full py-2 px-4 rounded-lg btn-primary text-xs uppercase font-bold">Отлично</button>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            
+            // Nav indicators
+            ['main', 'praktika', 'arch'].forEach(id => {
+                const btn = document.getElementById('nav-' + id);
+                if (id === pageId) {
+                    btn.classList.add('bg-zinc-800', 'text-amber-400');
+                    btn.classList.remove('text-zinc-400');
+                } else {
+                    btn.classList.remove('bg-zinc-800', 'text-amber-400');
+                    btn.classList.add('text-zinc-400');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(e, program) {
+            e.preventDefault();
+            const modal = document.getElementById('modal');
+            const modalText = document.getElementById('modal-text');
+            if (program === 'Архитектура Тренинга') {
+                modalText.innerText = "Спасибо! Ты в листе ожидания. Напишу тебе первым, когда откроем продажи.";
+            } else {
+                modalText.innerText = "Заявка пришла. Скоро свяжемся с тобой и расскажем об участии.";
+            }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            e.target.reset();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Initialize default active tab styling
+        navigateTo('main');
+    </script>
+</body>
+</html>
